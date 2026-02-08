@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ranger Group 42 — Military Sci-Fi Western Book Series by Rory Stouder</title>
+  <meta name="description" content="Ranger Group 42: A military sci-fi western book series by Rory Stouder. Deadman's Gulch available now. Devils Canyon coming soon.">
+  <meta name="author" content="Rory Stouder">
+  <meta name="theme-color" content="#0a0f1a">
+  <meta property="og:title" content="Ranger Group 42 Book Series">
+  <meta property="og:description" content="Military Sci-Fi Western by Rory Stouder. Elite peacekeepers. Corporate conspiracies. Clone armies. Ancient aliens.">
+  <meta property="og:image" content="images/series-banner.png">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/png" href="images/book1-cover.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: '#0a0f1a',
+            'navy-light': '#111827',
+            amber: '#c47a2a',
+            'amber-light': '#d4943a',
+            cream: '#f0e6d3',
+            'cream-dim': '#c4b8a6',
+            sage: '#5a7247',
+          },
+          fontFamily: {
+            display: ['"Cinzel"', 'serif'],
+            body: ['"Inter"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; background: #0a0f1a; color: #f0e6d3; }
+    .font-display { font-family: 'Cinzel', serif; }
+
+    .fade-up { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease, transform 0.8s ease; }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+    .fade-in { opacity: 0; transition: opacity 1s ease; }
+    .fade-in.visible { opacity: 1; }
+
+    .book-glow { filter: drop-shadow(0 0 40px rgba(196,122,42,0.3)) drop-shadow(0 0 80px rgba(196,122,42,0.15)); transition: filter 0.5s ease; }
+    .book-glow:hover { filter: drop-shadow(0 0 60px rgba(196,122,42,0.5)) drop-shadow(0 0 100px rgba(196,122,42,0.25)); }
+
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #0a0f1a; }
+    ::-webkit-scrollbar-thumb { background: #c47a2a40; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #c47a2a80; }
+
+    .nav-blur { backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); }
+
+    .stars {
+      background-image:
+        radial-gradient(2px 2px at 20px 30px, #f0e6d320, transparent),
+        radial-gradient(2px 2px at 40px 70px, #f0e6d315, transparent),
+        radial-gradient(1px 1px at 90px 40px, #f0e6d320, transparent),
+        radial-gradient(1px 1px at 130px 80px, #f0e6d310, transparent),
+        radial-gradient(2px 2px at 160px 30px, #f0e6d315, transparent);
+      background-size: 200px 100px;
+    }
+
+    .cta-btn {
+      position: relative; overflow: hidden; transition: all 0.3s ease;
+    }
+    .cta-btn::before {
+      content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+      transition: left 0.5s ease;
+    }
+    .cta-btn:hover::before { left: 100%; }
+
+    .divider { height: 1px; background: linear-gradient(90deg, transparent, #c47a2a40, transparent); }
+
+    .parallax-bg {
+      background-attachment: fixed;
+      background-size: cover;
+      background-position: center;
+    }
+    @supports (-webkit-touch-callout: none) {
+      .parallax-bg { background-attachment: scroll; }
+    }
+
+    .hamburger span { transition: all 0.3s ease; }
+    .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .hamburger.active span:nth-child(2) { opacity: 0; }
+    .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(7px, -6px); }
+  </style>
+</head>
+<body class="antialiased">
+
+  <!-- Navigation -->
+  <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-500 nav-blur">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 md:h-20">
+        <a href="#hero" class="font-display text-amber font-bold text-lg tracking-wider">RG42</a>
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="#book1" class="text-cream-dim hover:text-amber transition-colors text-sm tracking-wide uppercase">Book 1</a>
+          <a href="#book2" class="text-cream-dim hover:text-amber transition-colors text-sm tracking-wide uppercase">Book 2</a>
+          <a href="#world" class="text-cream-dim hover:text-amber transition-colors text-sm tracking-wide uppercase">The World</a>
+          <a href="#team" class="text-cream-dim hover:text-amber transition-colors text-sm tracking-wide uppercase">The Team</a>
+          <a href="#author" class="text-cream-dim hover:text-amber transition-colors text-sm tracking-wide uppercase">Author</a>
+          <a href="https://a.co/d/efk7yro" target="_blank" class="bg-amber hover:bg-amber-light text-navy font-semibold px-5 py-2 rounded text-sm tracking-wide transition-all">GET THE BOOK</a>
+        </div>
+        <button id="menu-toggle" class="hamburger md:hidden flex flex-col space-y-1.5 p-2">
+          <span class="block w-6 h-0.5 bg-cream"></span>
+          <span class="block w-6 h-0.5 bg-cream"></span>
+          <span class="block w-6 h-0.5 bg-cream"></span>
+        </button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="md:hidden hidden bg-navy/95 nav-blur border-t border-amber/10">
+      <div class="px-4 py-4 space-y-3">
+        <a href="#book1" class="block text-cream-dim hover:text-amber text-sm tracking-wide uppercase py-2">Book 1</a>
+        <a href="#book2" class="block text-cream-dim hover:text-amber text-sm tracking-wide uppercase py-2">Book 2</a>
+        <a href="#world" class="block text-cream-dim hover:text-amber text-sm tracking-wide uppercase py-2">The World</a>
+        <a href="#team" class="block text-cream-dim hover:text-amber text-sm tracking-wide uppercase py-2">The Team</a>
+        <a href="#author" class="block text-cream-dim hover:text-amber text-sm tracking-wide uppercase py-2">Author</a>
+        <a href="https://a.co/d/efk7yro" target="_blank" class="block bg-amber hover:bg-amber-light text-navy font-semibold px-5 py-2.5 rounded text-sm tracking-wide text-center mt-2">GET THE BOOK</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ==================== HERO ==================== -->
+  <section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <!-- Background image -->
+    <div class="absolute inset-0 parallax-bg" style="background-image: url('images/series-banner.png');"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-navy/70 via-navy/50 to-navy"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-navy/60 via-transparent to-navy/60"></div>
+
+    <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-32">
+      <p class="text-amber font-semibold tracking-[0.4em] uppercase text-xs sm:text-sm mb-6 fade-up">Military Sci-Fi Western</p>
+      <h1 class="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-tight mb-4 fade-up">
+        <span class="text-cream">RANGER</span><br>
+        <span class="text-cream">GROUP </span><span class="text-amber">42</span>
+      </h1>
+      <p class="text-cream-dim/70 text-lg sm:text-xl mb-3 fade-up">The Book Series</p>
+      <p class="text-cream-dim/50 text-sm mb-10 fade-up">by <span class="text-cream">Rory Stouder</span></p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 fade-up">
+        <a href="#book1" class="cta-btn bg-amber hover:bg-amber-light text-navy font-bold px-8 py-3.5 rounded-lg text-sm tracking-wider uppercase shadow-lg shadow-amber/20">
+          Explore the Series
+        </a>
+        <a href="https://a.co/d/efk7yro" target="_blank" class="cta-btn border-2 border-amber/60 hover:border-amber text-amber hover:text-amber-light font-semibold px-8 py-3 rounded-lg text-sm tracking-wider uppercase">
+          Buy Book One
+        </a>
+      </div>
+    </div>
+
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+      <svg class="w-6 h-6 text-amber/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ==================== BOOK 1: DEADMAN'S GULCH ==================== -->
+  <section id="book1" class="relative py-24 md:py-32 overflow-hidden stars">
+    <div class="divider mb-24"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16 fade-up">
+        <div class="inline-block bg-amber/20 border border-amber/40 rounded-full px-6 py-1.5 mb-6">
+          <span class="text-amber font-semibold text-xs tracking-[0.2em] uppercase">Available Now</span>
+        </div>
+        <p class="text-amber font-semibold tracking-[0.3em] uppercase text-xs mb-4">Book One</p>
+        <h2 class="font-display text-4xl sm:text-5xl md:text-6xl font-bold text-cream">Deadman's Gulch</h2>
+      </div>
+
+      <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+        <!-- Book cover + Deadman's Gulch image -->
+        <div class="lg:w-2/5 flex flex-col items-center gap-8 fade-up">
+          <img src="images/book1-cover.png" alt="Ranger Group 42: Deadman's Gulch Book Cover"
+               class="book-glow w-64 sm:w-72 md:w-80 rounded-lg shadow-2xl">
+          <div class="relative w-full max-w-sm">
+            <div class="absolute -inset-4 bg-gradient-to-br from-amber/10 to-transparent rounded-2xl blur-xl"></div>
+            <img src="images/deadmans-gulch.png" alt="Deadman's Gulch — eerie canyon with green glow"
+                 class="relative rounded-xl shadow-2xl w-full">
+          </div>
+        </div>
+
+        <!-- Synopsis + Buy Links -->
+        <div class="lg:w-3/5 fade-up">
+          <div class="space-y-5 text-cream-dim/80 leading-relaxed text-base sm:text-lg mb-10">
+            <p>
+              <strong class="text-amber">Ranger Group 42</strong> is an elite peacekeeping unit tasked with maintaining
+              order in a galaxy fractured between three powers: the <strong class="text-cream">Citizens</strong>, the
+              <strong class="text-cream">Corporations</strong> who sit on the governing council, and the
+              <strong class="text-cream">Criminal Syndicates</strong> that thrive in the shadows.
+            </p>
+            <p>
+              When RG42 saves a colony under siege, they're forced into an impossible choice — let the
+              <strong class="text-cream">Black Ring</strong> syndicate escape, or sacrifice innocent lives. They choose
+              to save the colony, but what they uncover is far worse than a crime lord on the run.
+            </p>
+            <p>
+              The Black Ring is allied with a corrupt corporation on the governing council. Together, they've built
+              something that shouldn't exist: a <strong class="text-amber">clone army</strong>. And RG42 — punished
+              for making the right call — is exiled to the rim, where they'll be far from the truth.
+            </p>
+            <p class="text-amber/80 font-medium italic text-lg">
+              "In the gulch, the dead don't always stay dead."
+            </p>
+          </div>
+
+          <!-- Buy Links -->
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="https://a.co/d/efk7yro" target="_blank"
+               class="cta-btn bg-amber hover:bg-amber-light text-navy font-bold px-8 py-3.5 rounded-lg text-sm tracking-wider uppercase shadow-lg shadow-amber/20 text-center flex-1">
+              📖 Amazon
+            </a>
+            <a href="https://a.co/d/03AbwgnX" target="_blank"
+               class="cta-btn border-2 border-amber/60 hover:border-amber text-amber hover:text-amber-light font-semibold px-8 py-3 rounded-lg text-sm tracking-wider uppercase text-center flex-1">
+              🎧 Audible
+            </a>
+            <a href="https://open.spotify.com/show/6i6bKcYgiquTzq4CUPuZAR" target="_blank"
+               class="cta-btn border-2 border-sage/60 hover:border-sage text-sage hover:text-cream font-semibold px-8 py-3 rounded-lg text-sm tracking-wider uppercase text-center flex-1">
+              🎵 Spotify
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== BOOK 2: DEVILS CANYON ==================== -->
+  <section id="book2" class="relative py-24 md:py-32 overflow-hidden">
+    <div class="divider mb-24"></div>
+    <!-- Background image -->
+    <div class="absolute inset-0 parallax-bg" style="background-image: url('images/alien-ruins.png');"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-navy via-navy/85 to-navy"></div>
+    <div class="absolute inset-0 bg-navy/60"></div>
+    <!-- Glow -->
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-red-900/10 blur-[150px]"></div>
+
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="text-center fade-up">
+        <div class="inline-block bg-red-900/30 border border-red-700/40 rounded-full px-6 py-1.5 mb-6">
+          <span class="text-red-400 font-semibold text-xs tracking-[0.2em] uppercase">Coming Soon</span>
+        </div>
+        <p class="text-amber font-semibold tracking-[0.3em] uppercase text-xs mb-4">Book Two</p>
+        <h2 class="font-display text-4xl sm:text-5xl md:text-6xl font-bold text-cream mb-8">Devils Canyon</h2>
+
+        <div class="w-24 h-0.5 bg-amber/30 mx-auto mb-10"></div>
+
+        <div class="space-y-5 text-cream-dim/80 leading-relaxed text-base sm:text-lg max-w-2xl mx-auto mb-12">
+          <p>
+            Exiled to the rim, <strong class="text-amber">Ranger Group 42</strong> disobeys orders to investigate
+            the destruction of a syndicate outpost. Their search leads them to something no human has ever found —
+            the <strong class="text-cream">first alien ruins ever discovered</strong>.
+          </p>
+          <p>
+            Deep within those ruins waits an <strong class="text-cream">ancient intelligence</strong> that has endured
+            eons, patient and purposeful, waiting for new hosts. Humanity's nano-tech integration — once its greatest
+            achievement — may now be its greatest vulnerability.
+          </p>
+          <p class="text-red-400/80 font-medium italic text-lg">
+            "Some doors were sealed for a reason."
+          </p>
+        </div>
+
+        <!-- Newsletter placeholder -->
+        <div class="bg-navy-light/60 border border-amber/10 rounded-2xl p-8 max-w-lg mx-auto">
+          <h3 class="font-display text-cream text-lg font-semibold mb-3">Get Notified at Launch</h3>
+          <p class="text-cream-dim/60 text-sm mb-6">Be the first to know when Devils Canyon drops.</p>
+          <div class="flex gap-3">
+            <input type="email" placeholder="your@email.com"
+                   class="flex-1 bg-navy border border-amber/20 rounded-lg px-4 py-3 text-cream text-sm placeholder-cream-dim/30 focus:outline-none focus:border-amber/50 transition-colors">
+            <button class="bg-amber hover:bg-amber-light text-navy font-bold px-6 py-3 rounded-lg text-sm tracking-wider uppercase transition-all">
+              Notify Me
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== THE WORLD ==================== -->
+  <section id="world" class="relative py-24 md:py-32 overflow-hidden stars">
+    <div class="divider mb-24"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16 fade-up">
+        <p class="text-amber font-semibold tracking-[0.3em] uppercase text-xs mb-4">The Universe</p>
+        <h2 class="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-cream mb-6">A Galaxy at War with Itself</h2>
+        <p class="text-cream-dim/60 text-lg max-w-2xl mx-auto">
+          Three powers. One fragile peace. And the Rangers caught in between.
+        </p>
+      </div>
+
+      <!-- World cards -->
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16 fade-up">
+        <div class="bg-navy-light/50 border border-amber/10 rounded-xl p-6 hover:border-amber/30 transition-colors">
+          <div class="text-amber text-2xl mb-3">🏛️</div>
+          <h3 class="font-display text-cream font-semibold text-lg mb-2">The Citizens</h3>
+          <p class="text-cream-dim/70 text-sm leading-relaxed">Billions of souls spread across settled worlds, caught between corporate ambition and criminal enterprise. Their voices are loud — but often unheard.</p>
+        </div>
+        <div class="bg-navy-light/50 border border-amber/10 rounded-xl p-6 hover:border-amber/30 transition-colors">
+          <div class="text-amber text-2xl mb-3">🏢</div>
+          <h3 class="font-display text-cream font-semibold text-lg mb-2">The Corporations</h3>
+          <p class="text-cream-dim/70 text-sm leading-relaxed">They sit on the governing council and control the flow of resources. Some serve the people. Others serve only themselves — and their profits.</p>
+        </div>
+        <div class="bg-navy-light/50 border border-amber/10 rounded-xl p-6 hover:border-amber/30 transition-colors">
+          <div class="text-amber text-2xl mb-3">💀</div>
+          <h3 class="font-display text-cream font-semibold text-lg mb-2">The Black Ring</h3>
+          <p class="text-cream-dim/70 text-sm leading-relaxed">The most dangerous criminal syndicate in the galaxy. Led by Wilson, they deal in stolen tech, cloned soldiers, and corporate secrets.</p>
+        </div>
+        <div class="bg-navy-light/50 border border-amber/10 rounded-xl p-6 hover:border-amber/30 transition-colors">
+          <div class="text-amber text-2xl mb-3">🧬</div>
+          <h3 class="font-display text-cream font-semibold text-lg mb-2">Nano-Integration</h3>
+          <p class="text-cream-dim/70 text-sm leading-relaxed">Humanity's greatest leap — direct neural interface with computer systems through nanotechnology. A gift that may become a curse.</p>
+        </div>
+      </div>
+
+      <!-- World images -->
+      <div class="grid md:grid-cols-2 gap-8 fade-up">
+        <div class="relative group">
+          <div class="absolute -inset-2 bg-gradient-to-br from-amber/10 to-transparent rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+          <img src="images/rim-colony.png" alt="Frontier rim colony with multiple moons"
+               class="relative rounded-xl shadow-2xl w-full">
+          <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-navy via-navy/80 to-transparent p-6 rounded-b-xl">
+            <h3 class="font-display text-cream font-semibold text-lg">Rim Colonies</h3>
+            <p class="text-cream-dim/60 text-sm">Frontier worlds on the edge of settled space — lawless, dangerous, and full of opportunity.</p>
+          </div>
+        </div>
+        <div class="relative group">
+          <div class="absolute -inset-2 bg-gradient-to-br from-red-900/10 to-transparent rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+          <img src="images/clone-army.png" alt="Rows of clone soldiers in dark facility"
+               class="relative rounded-xl shadow-2xl w-full">
+          <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-navy via-navy/80 to-transparent p-6 rounded-b-xl">
+            <h3 class="font-display text-cream font-semibold text-lg">The Clone Army</h3>
+            <p class="text-cream-dim/60 text-sm">Black Ring's secret weapon — an army grown in the dark, loyal to no flag but profit.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== THE TEAM ==================== -->
+  <section id="team" class="relative py-24 md:py-32 overflow-hidden">
+    <div class="divider mb-24"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+        <!-- Squad image -->
+        <div class="lg:w-3/5 fade-up">
+          <div class="relative">
+            <div class="absolute -inset-4 bg-gradient-to-br from-amber/10 to-sage/5 rounded-2xl blur-xl"></div>
+            <img src="images/rg42-squad.png" alt="Ranger Group 42 — six cybernetic western soldiers"
+                 class="relative rounded-xl shadow-2xl w-full">
+          </div>
+        </div>
+        <!-- Text -->
+        <div class="lg:w-2/5 fade-up">
+          <p class="text-amber font-semibold tracking-[0.3em] uppercase text-xs mb-4">The Rangers</p>
+          <h2 class="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-cream mb-8">Ranger Group 42</h2>
+          <div class="space-y-5 text-cream-dim/80 leading-relaxed text-base sm:text-lg">
+            <p>
+              Six soldiers. Nano-enhanced. Battle-hardened. They're the best peacekeeping unit the Confederation
+              has ever fielded — and the most inconvenient.
+            </p>
+            <p>
+              RG42 doesn't play politics. They don't take bribes. They do the job, even when the job puts them
+              at odds with the people who sign their orders. That kind of integrity makes them heroes to the
+              citizens — and a liability to everyone else.
+            </p>
+            <p>
+              After exposing a corporate-syndicate alliance, they're punished with exile duty on the rim.
+              But even at the edge of civilization, trouble has a way of finding them.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== ABOUT THE AUTHOR ==================== -->
+  <section id="author" class="relative py-24 md:py-32 overflow-hidden stars">
+    <div class="divider mb-24"></div>
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center fade-up">
+      <p class="text-amber font-semibold tracking-[0.3em] uppercase text-xs mb-4">The Author</p>
+      <h2 class="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-cream mb-8">Rory Stouder</h2>
+      <div class="space-y-5 text-cream-dim/80 leading-relaxed text-base sm:text-lg max-w-2xl mx-auto">
+        <p>
+          Rory Stouder is a technology entrepreneur and science fiction author based in Indiana. A lifelong fan
+          of military sci-fi, space opera, and westerns, he spent years building companies in the tech space before
+          turning his imagination loose on the page.
+        </p>
+        <p>
+          <em>Ranger Group 42: Deadman's Gulch</em> is his debut novel — a story that blends the grit of military
+          fiction with the vast possibilities of speculative science. Drawing on themes of duty, sacrifice, corporate
+          overreach, and the cost of progress, it reflects both his love for the genre and his perspective as someone
+          who builds things for a living.
+        </p>
+        <p>
+          When he's not writing or running <strong class="text-cream">Gain3d Studios</strong>, Rory can be found
+          exploring new tech, debating starship designs, or planning the next chapter of the Ranger Group 42 saga.
+        </p>
+      </div>
+      <div class="mt-10">
+        <a href="https://author.rorystouder.com" target="_blank"
+           class="text-amber hover:text-amber-light transition-colors text-sm tracking-wide uppercase font-semibold">
+          Visit Author Site →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="relative border-t border-amber/10 py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-8">
+        <div class="text-center md:text-left">
+          <p class="font-display text-amber font-bold tracking-wider mb-1">RANGER GROUP 42</p>
+          <p class="text-cream-dim/50 text-sm">Published by Gain3d Studios, LLC</p>
+        </div>
+        <div class="flex items-center gap-6">
+          <a href="https://a.co/d/efk7yro" target="_blank" class="text-cream-dim/50 hover:text-amber transition-colors text-sm">Amazon</a>
+          <a href="https://a.co/d/03AbwgnX" target="_blank" class="text-cream-dim/50 hover:text-amber transition-colors text-sm">Audible</a>
+          <a href="https://open.spotify.com/show/6i6bKcYgiquTzq4CUPuZAR" target="_blank" class="text-cream-dim/50 hover:text-amber transition-colors text-sm">Spotify</a>
+          <a href="https://author.rorystouder.com" target="_blank" class="text-cream-dim/50 hover:text-amber transition-colors text-sm">Author Site</a>
+        </div>
+        <div class="text-center md:text-right">
+          <p class="text-cream-dim/40 text-xs">&copy; 2025 Rory Stouder. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== SCRIPTS ==================== -->
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+    document.querySelectorAll('.fade-up, .fade-in').forEach(el => observer.observe(el));
+
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        navbar.classList.add('bg-navy/90', 'shadow-lg', 'shadow-black/20');
+      } else {
+        navbar.classList.remove('bg-navy/90', 'shadow-lg', 'shadow-black/20');
+      }
+    });
+
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuToggle.addEventListener('click', () => {
+      menuToggle.classList.toggle('active');
+      mobileMenu.classList.toggle('hidden');
+    });
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        menuToggle.classList.remove('active');
+        mobileMenu.classList.add('hidden');
+      });
+    });
+  </script>
+</body>
+</html>
